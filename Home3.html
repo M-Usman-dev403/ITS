@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Ideal Technology Solutions — managed IT, cloud, network design and consulting for small and mid-sized businesses in Detroit." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #050D1C; color: #fff; font-family: 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: #22B8DC; text-decoration: none; }
+  a:hover { color: #8FE2F5; }
+  img { max-width: 100%; }
+  ::selection { background: #22B8DC; color: #050D1C; }
+  @keyframes its3-spin { to { transform: rotate(360deg); } }
+  @keyframes its3-marq { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @keyframes its3-marq-rev { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
+  @keyframes its3-blob { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(8%,-6%) scale(1.2); } }
+  @keyframes its3-float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(6deg); } }
+  @keyframes its3-glow { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#050D1C;font-family:'DM Sans',system-ui,sans-serif;">
+  <a href="#main" style="position:absolute;left:-9999px;top:0;background:#22B8DC;color:#050D1C;padding:10px 16px;z-index:300;font-weight:700;" style-focus="left:12px;top:12px;">Skip to main content</a>
+
+  <header style="position:sticky;top:0;z-index:200;padding:16px clamp(14px,2vw,26px) 0;">
+    <nav aria-label="Primary" style="max-width:1320px;margin:0 auto;padding:12px 12px 12px 20px;display:flex;align-items:center;gap:18px;justify-content:space-between;background:rgba(10,23,48,.72);backdrop-filter:blur(16px);border:1px solid rgba(143,226,245,.18);border-radius:999px;box-shadow:0 24px 50px -30px rgba(0,0,0,.9);">
+      <a href="#main" aria-label="Ideal Technology Solutions home" style="flex:none;display:block;">
+        <img src="https://idealtechnologysolutions.us/wp-content/uploads/2025/08/Logo-IdealTS-NO-BG-1-e1756749623695-1024x286.png" alt="Ideal Technology Solutions" style="height:38px;width:auto;display:block;filter:brightness(0) invert(1);" />
+      </a>
+      <ul style="{{ deskNav }}">
+        <li><a href="#main" style="display:block;padding:9px 16px;border-radius:999px;background:rgba(34,184,220,.16);color:#fff;font-size:14.5px;font-weight:700;">Home</a></li>
+        <li><a href="#services" style="display:block;padding:9px 16px;border-radius:999px;color:#B9CBE2;font-size:14.5px;font-weight:700;transition:background .3s ease,color .3s ease;" style-hover="background:rgba(34,184,220,.16);color:#fff;">Services</a></li>
+        <li><a href="#about" style="display:block;padding:9px 16px;border-radius:999px;color:#B9CBE2;font-size:14.5px;font-weight:700;transition:background .3s ease,color .3s ease;" style-hover="background:rgba(34,184,220,.16);color:#fff;">About</a></li>
+        <li><a href="#industries" style="display:block;padding:9px 16px;border-radius:999px;color:#B9CBE2;font-size:14.5px;font-weight:700;transition:background .3s ease,color .3s ease;" style-hover="background:rgba(34,184,220,.16);color:#fff;">Industries</a></li>
+        <li><a href="#partners" style="display:block;padding:9px 16px;border-radius:999px;color:#B9CBE2;font-size:14.5px;font-weight:700;transition:background .3s ease,color .3s ease;" style-hover="background:rgba(34,184,220,.16);color:#fff;">Partners</a></li>
+        <li><a href="#contact" style="display:block;padding:9px 16px;border-radius:999px;color:#B9CBE2;font-size:14.5px;font-weight:700;transition:background .3s ease,color .3s ease;" style-hover="background:rgba(34,184,220,.16);color:#fff;">Contact</a></li>
+      </ul>
+      <a href="#contact" style="{{ deskCta }}" style-hover="transform:translateY(-2px) scale(1.02);color:#03101F;">Get Started</a>
+      <button type="button" aria-label="Open menu" onClick="{{ toggleMenu }}" style="{{ burger }}">
+        <span style="display:block;width:20px;height:2px;background:#fff;"></span>
+        <span style="display:block;width:20px;height:2px;background:#fff;"></span>
+        <span style="display:block;width:13px;height:2px;background:#22B8DC;"></span>
+      </button>
+    </nav>
+    <div style="{{ mobileMenu }}">
+      <ul style="list-style:none;margin:0 0 16px;padding:0;display:grid;gap:4px;">
+        <li><a href="#main" onClick="{{ closeMenu }}" style="display:block;padding:14px 12px;border-radius:12px;color:#fff;font-family:Sora,sans-serif;font-size:18px;font-weight:600;background:rgba(34,184,220,.12);">Home</a></li>
+        <li><a href="#services" onClick="{{ closeMenu }}" style="display:block;padding:14px 12px;border-radius:12px;color:#DCE7F5;font-family:Sora,sans-serif;font-size:18px;font-weight:600;">Services</a></li>
+        <li><a href="#about" onClick="{{ closeMenu }}" style="display:block;padding:14px 12px;border-radius:12px;color:#DCE7F5;font-family:Sora,sans-serif;font-size:18px;font-weight:600;">About</a></li>
+        <li><a href="#industries" onClick="{{ closeMenu }}" style="display:block;padding:14px 12px;border-radius:12px;color:#DCE7F5;font-family:Sora,sans-serif;font-size:18px;font-weight:600;">Industries</a></li>
+        <li><a href="#partners" onClick="{{ closeMenu }}" style="display:block;padding:14px 12px;border-radius:12px;color:#DCE7F5;font-family:Sora,sans-serif;font-size:18px;font-weight:600;">Partners</a></li>
+        <li><a href="#contact" onClick="{{ closeMenu }}" style="display:block;padding:14px 12px;border-radius:12px;color:#DCE7F5;font-family:Sora,sans-serif;font-size:18px;font-weight:600;">Contact</a></li>
+      </ul>
+      <a href="#contact" onClick="{{ closeMenu }}" style="display:block;text-align:center;padding:16px;border-radius:999px;background:linear-gradient(120deg,#22B8DC,#2E6FD1);color:#03101F;font-weight:700;font-size:16px;">Get Started</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section aria-label="Introduction" style="position:relative;overflow:hidden;padding:clamp(52px,7vw,110px) 0 0;">
+      <div id="its3-glow" style="position:absolute;left:50%;top:20%;width:44vw;height:44vw;max-width:680px;max-height:680px;margin-left:-22vw;margin-top:-22vw;border-radius:50%;background:radial-gradient(circle,rgba(34,184,220,.30),transparent 60%);filter:blur(18px);transition:transform .6s cubic-bezier(.2,.7,.3,1);pointer-events:none;"></div>
+      <div style="position:absolute;left:-12%;bottom:-10%;width:46vw;height:46vw;max-width:620px;max-height:620px;border-radius:50%;background:radial-gradient(circle,rgba(46,111,209,.34),transparent 62%);filter:blur(22px);animation:its3-blob 20s ease-in-out infinite;"></div>
+      <div style="position:absolute;right:6%;top:14%;width:120px;height:120px;border:1px solid rgba(143,226,245,.28);border-radius:28px;animation:its3-float 12s ease-in-out infinite;"></div>
+      <div style="position:absolute;right:22%;bottom:14%;width:64px;height:64px;border:1px solid rgba(245,166,35,.4);border-radius:50%;animation:its3-float 9s ease-in-out infinite reverse;"></div>
+
+      <div style="position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);">
+        <p data-reveal style="margin:0 auto 26px;max-width:max-content;padding:9px 18px;border-radius:999px;border:1px solid rgba(143,226,245,.3);background:rgba(34,184,220,.1);color:#8FE2F5;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:center;white-space:nowrap;">Detroit &middot; Managed IT since 2001</p>
+        <h1 data-reveal style="font-family:Sora,sans-serif;margin:0 auto 28px;max-width:17ch;text-align:center;color:#fff;font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.04em;font-weight:700;text-wrap:balance;">
+          Your business, always
+          <span style="display:block;background:linear-gradient(96deg,#22B8DC,#8FE2F5 40%,#2E6FD1);-webkit-background-clip:text;background-clip:text;color:transparent;">switched on</span>
+        </h1>
+        <p data-reveal style="margin:0 auto 36px;max-width:60ch;text-align:center;color:#B9CBE2;font-size:clamp(16.5px,1.5vw,20px);line-height:1.65;">
+          Managed IT, cloud infrastructure, network design and consulting for small and mid-sized businesses across Metro Detroit. Secure systems, fast answers, no jargon.
+        </p>
+        <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:clamp(44px,5vw,72px);">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:12px;padding:18px 30px;border-radius:999px;background:linear-gradient(120deg,#22B8DC,#2E6FD1);color:#03101F;font-weight:700;font-size:16.5px;box-shadow:0 20px 44px -18px rgba(34,184,220,.9);white-space:nowrap;transition:transform .3s ease,box-shadow .3s ease;" style-hover="transform:translateY(-3px) scale(1.02);box-shadow:0 28px 56px -18px rgba(34,184,220,1);color:#03101F;">Schedule a Consultation <span>&#8594;</span></a>
+          <a href="#services" style="display:inline-flex;align-items:center;gap:12px;padding:18px 28px;border-radius:999px;border:1px solid rgba(185,203,226,.34);color:#fff;font-weight:700;font-size:16.5px;white-space:nowrap;transition:background .3s ease,border-color .3s ease,transform .3s ease;" style-hover="background:rgba(34,184,220,.12);border-color:#22B8DC;transform:translateY(-3px);color:#fff;">See what we do</a>
+        </div>
+
+        <div data-reveal style="position:relative;border-radius:clamp(18px,2vw,28px);overflow:hidden;border:1px solid rgba(143,226,245,.2);background:linear-gradient(165deg,rgba(15,34,66,.9),rgba(5,13,28,.9));box-shadow:0 60px 110px -50px rgba(0,0,0,1);">
+          <div style="position:relative;aspect-ratio:21/9;min-height:240px;overflow:hidden;">
+            <img src="c3-hero.webp" alt="Global network connections rendered as a lit circuit map" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+            <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,28,.35),rgba(5,13,28,.7));"></div>
+          </div>
+          <div style="position:absolute;right:clamp(14px,2vw,26px);top:clamp(14px,2vw,26px);display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;">
+            <span style="padding:9px 15px;border-radius:999px;background:rgba(5,13,28,.8);border:1px solid rgba(34,184,220,.4);color:#8FE2F5;font-size:12.5px;font-weight:700;letter-spacing:.06em;">24/7 monitoring</span>
+            <span style="padding:9px 15px;border-radius:999px;background:rgba(5,13,28,.8);border:1px solid rgba(245,166,35,.4);color:#F5C877;font-size:12.5px;font-weight:700;letter-spacing:.06em;">Same-day response</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(28px,3vw,46px);border-top:1px solid rgba(185,203,226,.14);border-bottom:1px solid rgba(185,203,226,.14);background:rgba(10,23,48,.5);overflow:hidden;">
+        <div style="display:flex;width:max-content;animation:its3-marq 26s linear infinite;">
+          <sc-for list="{{ tickerLoop }}" as="t" hint-placeholder-count="12">
+            <span style="display:flex;align-items:center;gap:clamp(18px,2.4vw,34px);padding:16px clamp(18px,2.4vw,34px) 16px 0;font-family:Sora,sans-serif;font-size:clamp(14px,1.3vw,17px);font-weight:600;letter-spacing:.02em;color:#DCE7F5;white-space:nowrap;">
+              {{ t.text }}
+              <span style="width:6px;height:6px;border-radius:50%;background:#22B8DC;display:block;flex:none;"></span>
+            </span>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="By the numbers" style="padding:clamp(48px,5.5vw,86px) 0;">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(14px,1.6vw,20px);">
+        <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+          <div data-reveal style="padding:clamp(22px,2.4vw,32px);border-radius:20px;background:linear-gradient(160deg,rgba(15,34,66,.9),rgba(5,13,28,.6));border:1px solid rgba(185,203,226,.14);transition:transform .4s cubic-bezier(.2,.7,.3,1),border-color .4s ease;" style-hover="transform:translateY(-8px);border-color:rgba(34,184,220,.6);">
+            <p style="margin:0 0 10px;font-family:Sora,sans-serif;color:#fff;font-size:clamp(36px,4.2vw,54px);line-height:1;letter-spacing:-.03em;font-weight:700;"><span data-count="{{ st.value }}" data-suffix="{{ st.suffix }}">{{ st.display }}</span></p>
+            <p style="margin:0 0 8px;color:#22B8DC;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;">{{ st.label }}</p>
+            <p style="margin:0;color:#9FB4CE;font-size:15px;line-height:1.6;">{{ st.note }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="svc3" style="padding:clamp(56px,6.5vw,110px) 0;background:linear-gradient(180deg,#050D1C,#0A1730 60%,#050D1C);">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);">
+        <div data-reveal style="display:flex;flex-wrap:wrap;gap:26px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(30px,3.4vw,48px);">
+          <div style="flex:1 1 440px;min-width:0;">
+            <p style="margin:0 0 14px;color:#22B8DC;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Services</p>
+            <h2 id="svc3" style="font-family:Sora,sans-serif;margin:0;color:#fff;font-size:clamp(30px,4.2vw,56px);line-height:1.04;letter-spacing:-.03em;font-weight:700;max-width:20ch;text-wrap:balance;">Pick a practice. See how it works.</h2>
+          </div>
+          <p style="flex:1 1 280px;min-width:0;margin:0;color:#B9CBE2;font-size:16.5px;line-height:1.65;max-width:40ch;">Six practices, one accountable team. Select any of them to see what is included and who it suits.</p>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(18px,2.2vw,32px);align-items:stretch;">
+          <ul style="flex:1 1 340px;min-width:0;list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-auto-rows:1fr;align-content:stretch;">
+            <sc-for list="{{ serviceTabs }}" as="s" hint-placeholder-count="6">
+              <li style="display:flex;">
+                <button type="button" onClick="{{ s.select }}" onMouseEnter="{{ s.select }}" aria-pressed="{{ s.active }}" style="{{ s.btnStyle }}">
+                  <span style="{{ s.noStyle }}">{{ s.no }}</span>
+                  <span style="font-family:Sora,sans-serif;font-size:clamp(17px,1.7vw,21px);font-weight:600;letter-spacing:-.01em;line-height:1.25;flex:1;">{{ s.title }}</span>
+                  <span style="{{ s.arrowStyle }}">&#8594;</span>
+                </button>
+              </li>
+            </sc-for>
+          </ul>
+
+          <div style="flex:1 1 420px;min-width:0;position:relative;overflow:hidden;border-radius:24px;padding:2px;background:rgba(185,203,226,.14);" style-before="content:'';position:absolute;left:50%;top:50%;width:190%;aspect-ratio:1;transform:translate(-50%,-50%);background:conic-gradient(from 0deg,transparent 0deg,#22B8DC 44deg,#2E6FD1 84deg,transparent 132deg,transparent 360deg);animation:its3-spin 7s linear infinite;">
+            <div style="position:relative;height:100%;border-radius:22px;background:linear-gradient(160deg,#0F2242,#050D1C 70%);padding:clamp(24px,2.8vw,40px);display:flex;flex-direction:column;gap:20px;">
+              <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(143,226,245,.16);">
+                <sc-if value="{{ active.img }}"><img src="{{ active.img }}" alt="{{ active.imgAlt }}" style="width:100%;height:100%;object-fit:cover;display:block;" /></sc-if>
+              </div>
+              <div>
+                <h3 style="font-family:Sora,sans-serif;margin:0 0 12px;color:#fff;font-size:clamp(22px,2.4vw,30px);line-height:1.14;letter-spacing:-.02em;font-weight:700;">{{ active.title }}</h3>
+                <p style="margin:0 0 20px;color:#B9CBE2;font-size:16.5px;line-height:1.7;">{{ active.body }}</p>
+                <ul style="list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px 20px;">
+                  <sc-for list="{{ active.points }}" as="pt" hint-placeholder-count="4">
+                    <li style="display:flex;gap:10px;align-items:flex-start;color:#DCE7F5;font-size:15px;font-weight:500;line-height:1.5;"><span style="color:#22B8DC;flex:none;">&#10003;</span> {{ pt.text }}</li>
+                  </sc-for>
+                </ul>
+                <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:rgba(34,184,220,.16);border:1px solid rgba(34,184,220,.5);color:#8FE2F5;font-weight:700;font-size:15px;transition:background .3s ease,gap .3s ease;" style-hover="background:rgba(34,184,220,.28);gap:16px;color:#fff;">Talk to us about this <span>&#8594;</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Positioning statement" style="padding:clamp(20px,3vw,44px) 0;overflow:hidden;border-top:1px solid rgba(185,203,226,.12);border-bottom:1px solid rgba(185,203,226,.12);">
+      <div style="display:flex;width:max-content;animation:its3-marq-rev 30s linear infinite;">
+        <sc-for list="{{ bigWordsLoop }}" as="w" hint-placeholder-count="6">
+          <span style="{{ w.style }}">{{ w.text }}</span>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="why3" style="padding:clamp(56px,6.5vw,110px) 0;">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);">
+        <div data-reveal style="max-width:62ch;margin-bottom:clamp(32px,3.6vw,52px);">
+          <p style="margin:0 0 14px;color:#22B8DC;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Why clients choose us</p>
+          <h2 id="why3" style="font-family:Sora,sans-serif;margin:0 0 18px;color:#fff;font-size:clamp(30px,4.2vw,56px);line-height:1.04;letter-spacing:-.03em;font-weight:700;text-wrap:balance;">A partner that behaves like part of your team</h2>
+          <p style="margin:0;color:#B9CBE2;font-size:17px;line-height:1.7;">Ideal Technology Solutions is a trusted technology partner serving businesses in Detroit and surrounding areas, keeping organizations connected, secure and operating smoothly.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(14px,1.6vw,22px);">
+          <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="4">
+            <article style="position:relative;overflow:hidden;border-radius:22px;padding:2px;background:rgba(185,203,226,.12);" style-before="content:'';position:absolute;left:50%;top:50%;width:260%;aspect-ratio:1;transform:translate(-50%,-50%);background:conic-gradient(from 0deg,transparent 0deg,rgba(34,184,220,.9) 40deg,transparent 90deg,transparent 360deg);animation:its3-spin 9s linear infinite;">
+              <div style="position:relative;height:100%;border-radius:20px;background:linear-gradient(165deg,#0C1B36,#050D1C);padding:clamp(24px,2.4vw,32px);transition:transform .4s cubic-bezier(.2,.7,.3,1),background .4s ease;" style-hover="transform:translateY(-6px);background:linear-gradient(165deg,#123055,#050D1C);">
+                <div style="width:54px;height:54px;border-radius:16px;background:rgba(34,184,220,.16);border:1px solid rgba(34,184,220,.4);display:flex;align-items:center;justify-content:center;margin-bottom:22px;">
+                  <span style="width:20px;height:20px;border:2.5px solid #22B8DC;border-radius:{{ r.iconRadius }};display:block;"></span>
+                </div>
+                <h3 style="font-family:Sora,sans-serif;margin:0 0 12px;color:#fff;font-size:20px;line-height:1.2;letter-spacing:-.015em;font-weight:600;">{{ r.title }}</h3>
+                <p style="margin:0;color:#9FB4CE;font-size:15.5px;line-height:1.65;">{{ r.body }}</p>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" aria-labelledby="ind3" style="padding:clamp(56px,6.5vw,110px) 0;background:linear-gradient(180deg,#050D1C,#0A1730);">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);">
+        <div data-reveal style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(26px,3vw,40px);">
+          <div style="flex:1 1 420px;min-width:0;">
+            <p style="margin:0 0 14px;color:#22B8DC;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Industries we serve</p>
+            <h2 id="ind3" style="font-family:Sora,sans-serif;margin:0;color:#fff;font-size:clamp(30px,4.2vw,56px);line-height:1.04;letter-spacing:-.03em;font-weight:700;max-width:20ch;text-wrap:balance;">Six sectors, six sets of rules</h2>
+          </div>
+          <p style="flex:1 1 260px;min-width:0;margin:0;color:#8FA8C6;font-size:15px;line-height:1.6;max-width:32ch;">Scroll sideways to see how we work in each one.</p>
+        </div>
+      </div>
+      <div style="overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:6px clamp(18px,2.4vw,30px) 26px;">
+        <div style="display:flex;gap:clamp(14px,1.6vw,22px);width:max-content;max-width:none;margin:0 auto;">
+          <sc-for list="{{ industries }}" as="i" hint-placeholder-count="6">
+            <article style="scroll-snap-align:start;flex:none;width:clamp(250px,26vw,340px);border-radius:22px;overflow:hidden;border:1px solid rgba(185,203,226,.16);background:#0C1B36;transition:transform .45s cubic-bezier(.2,.7,.3,1),border-color .45s ease,box-shadow .45s ease;" style-hover="transform:translateY(-10px);border-color:rgba(34,184,220,.65);box-shadow:0 40px 70px -34px rgba(0,0,0,1);">
+              <div style="position:relative;aspect-ratio:4/5;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2vw,24px);">
+                <img src="{{ i.img }}" alt="{{ i.imgAlt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+                <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,28,.3) 0%,rgba(5,13,28,.74) 52%,rgba(5,13,28,.93) 100%);"></div>
+                <p style="position:relative;margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;line-height:1.5;color:#8FE2F5;letter-spacing:.08em;">{{ i.no }}</p>
+                <div style="position:relative;">
+                  <h3 style="font-family:Sora,sans-serif;margin:0 0 10px;color:#fff;font-size:clamp(21px,2.2vw,27px);line-height:1.12;letter-spacing:-.02em;font-weight:700;">{{ i.title }}</h3>
+                  <p style="margin:0 0 14px;color:#B9CBE2;font-size:14.5px;line-height:1.6;">{{ i.body }}</p>
+                </div>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" aria-labelledby="prt3" style="padding:clamp(56px,6.5vw,100px) 0;background:#0A1730;">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);">
+        <div data-reveal style="text-align:center;max-width:56ch;margin:0 auto clamp(30px,3.4vw,48px);">
+          <p style="margin:0 0 14px;color:#22B8DC;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Technology partners</p>
+          <h2 id="prt3" style="font-family:Sora,sans-serif;margin:0 0 16px;color:#fff;font-size:clamp(28px,3.6vw,46px);line-height:1.06;letter-spacing:-.03em;font-weight:700;text-wrap:balance;">Partnering with industry leaders to deliver excellence</h2>
+          <p style="margin:0;color:#B9CBE2;font-size:16.5px;line-height:1.65;">We collaborate with industry-leading technology partners to deliver the best solutions for your business.</p>
+        </div>
+      </div>
+      <div onMouseEnter="{{ pauseMarquee }}" onMouseLeave="{{ playMarquee }}" style="display:grid;gap:clamp(12px,1.4vw,18px);overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);">
+        <div style="{{ marqueeA }}">
+          <sc-for list="{{ partnersLoop }}" as="p" hint-placeholder-count="8">
+            <div style="flex:none;width:clamp(150px,15vw,200px);height:clamp(74px,7vw,96px);border-radius:16px;background:#fff;border:1px solid rgba(185,203,226,.2);display:flex;align-items:center;justify-content:center;padding:16px 20px;transition:transform .35s ease;" style-hover="transform:translateY(-5px);">
+              <img src="{{ p.src }}" alt="{{ p.alt }}" loading="lazy" style="max-height:36px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.6;transition:filter .35s ease,opacity .35s ease;" style-hover="filter:grayscale(0);opacity:1;" />
+            </div>
+          </sc-for>
+        </div>
+        <div style="{{ marqueeB }}">
+          <sc-for list="{{ partnersLoopRev }}" as="p" hint-placeholder-count="8">
+            <div style="flex:none;width:clamp(150px,15vw,200px);height:clamp(74px,7vw,96px);border-radius:16px;background:#fff;border:1px solid rgba(185,203,226,.2);display:flex;align-items:center;justify-content:center;padding:16px 20px;transition:transform .35s ease;" style-hover="transform:translateY(-5px);">
+              <img src="{{ p.src }}" alt="{{ p.alt }}" loading="lazy" style="max-height:36px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.6;transition:filter .35s ease,opacity .35s ease;" style-hover="filter:grayscale(0);opacity:1;" />
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="cta3" style="position:relative;overflow:hidden;padding:clamp(60px,7vw,120px) 0;">
+      <div style="position:absolute;left:50%;top:50%;width:80vw;height:80vw;max-width:900px;max-height:900px;margin-left:-40vw;margin-top:-40vw;border-radius:50%;background:radial-gradient(circle,rgba(34,184,220,.26),transparent 60%);filter:blur(20px);animation:its3-blob 24s ease-in-out infinite;"></div>
+      <div style="position:relative;max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);text-align:center;">
+        <h2 id="cta3" data-reveal style="font-family:Sora,sans-serif;margin:0 auto 24px;max-width:20ch;color:#fff;font-size:clamp(32px,5.4vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:700;text-wrap:balance;">Let&rsquo;s make your technology boring again</h2>
+        <p data-reveal style="margin:0 auto 36px;max-width:56ch;color:#B9CBE2;font-size:clamp(16.5px,1.5vw,19px);line-height:1.7;">Book a 30 minute appointment with a client advisor. We will tell you what we would fix first, what it costs and what we would leave alone.</p>
+        <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:12px;padding:19px 32px;border-radius:999px;background:linear-gradient(120deg,#22B8DC,#2E6FD1);color:#03101F;font-weight:700;font-size:17px;box-shadow:0 22px 46px -18px rgba(34,184,220,.9);white-space:nowrap;transition:transform .3s ease;" style-hover="transform:translateY(-3px) scale(1.02);color:#03101F;">Get Started <span>&#8594;</span></a>
+          <a href="tel:+19472280709" style="display:inline-flex;align-items:center;gap:12px;padding:19px 30px;border-radius:999px;border:1px solid rgba(185,203,226,.34);color:#fff;font-weight:700;font-size:17px;white-space:nowrap;transition:background .3s ease,border-color .3s ease;" style-hover="background:rgba(34,184,220,.12);border-color:#22B8DC;color:#fff;">Talk to us: 947-228-0709</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" style="position:relative;overflow:hidden;background:#050D1C;padding:clamp(46px,5vw,76px) 0 0;">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(34,184,220,.9),rgba(46,111,209,.9),transparent);"></div>
+    <div aria-hidden="true" style="position:absolute;left:50%;top:-30%;width:80vw;height:60%;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(34,184,220,.16),transparent 65%);"></div>
+    <div style="position:relative;max-width:1320px;margin:0 auto;padding:0 clamp(18px,2.4vw,30px);">
+
+      <div style="border:1px solid rgba(143,226,245,.2);border-radius:clamp(16px,1.8vw,24px);background:linear-gradient(165deg,rgba(15,34,66,.85),rgba(5,13,28,.9));overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:9px;padding:14px 20px;border-bottom:1px solid rgba(143,226,245,.16);background:rgba(5,13,28,.6);">
+          <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#22B8DC;display:block;"></span>
+          <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#2E6FD1;display:block;"></span>
+          <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#F5A623;display:block;"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:#8FA8C6;letter-spacing:.06em;">ideal-technology-solutions // contact</span>
+        </div>
+        <div style="padding:clamp(24px,3vw,44px);display:flex;flex-wrap:wrap;gap:clamp(26px,3.4vw,56px);align-items:flex-start;">
+          <div style="flex:1 1 380px;min-width:0;">
+            <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#22B8DC;letter-spacing:.04em;">&gt; start_a_conversation</p>
+            <h2 style="font-family:Sora,sans-serif;margin:0 0 18px;color:#fff;font-size:clamp(26px,3vw,40px);line-height:1.1;letter-spacing:-.025em;font-weight:700;max-width:22ch;text-wrap:balance;">Tell us what is slowing your team down.</h2>
+            <p style="margin:0 0 26px;color:#B9CBE2;font-size:16px;line-height:1.7;max-width:48ch;">Ideal Technology Solutions is a Detroit based IT consulting and services company helping businesses thrive with secure, scalable and reliable technology.</p>
+            <div style="display:grid;gap:12px;max-width:440px;">
+              <a href="tel:+19472280709" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border-radius:14px;border:1px solid rgba(34,184,220,.4);background:rgba(34,184,220,.1);transition:background .3s ease,transform .3s ease;" style-hover="background:rgba(34,184,220,.2);transform:translateX(4px);">
+                <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FE2F5;">Call</span>
+                <span style="font-family:Sora,sans-serif;color:#fff;font-size:19px;font-weight:700;">947-228-0709</span>
+              </a>
+              <a href="mailto:info@idealtechnologysolutions.us" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border-radius:14px;border:1px solid rgba(185,203,226,.2);transition:border-color .3s ease,transform .3s ease;" style-hover="border-color:#22B8DC;transform:translateX(4px);">
+                <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA8C6;">Email</span>
+                <span style="color:#fff;font-size:15px;font-weight:700;word-break:break-word;text-align:right;">info@idealtechnologysolutions.us</span>
+              </a>
+              <p style="margin:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border-radius:14px;border:1px solid rgba(185,203,226,.14);">
+                <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FA8C6;flex:none;">Office</span>
+                <span style="color:#DCE7F5;font-size:15px;line-height:1.5;text-align:right;">29777 Telegraph Road, Suite 4200<br />Southfield, Michigan, 48034</span>
+              </p>
+            </div>
+          </div>
+          <div style="flex:1 1 380px;min-width:0;display:grid;gap:clamp(24px,2.6vw,34px);">
+            <div>
+              <p style="margin:0 0 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#6C8AAC;">Pages</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <a href="#main" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">01</span> Home</a>
+            <a href="#about" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">02</span> About</a>
+            <a href="#services" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">03</span> Services</a>
+            <a href="#industries" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">04</span> Industries</a>
+            <a href="#partners" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">05</span> Partners</a>
+            <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">06</span> Contact us</a>
+              </div>
+            </div>
+            <div>
+              <p style="margin:0 0 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#6C8AAC;">Practices</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <a href="#services" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">01</span> IT Managed Services</a>
+            <a href="#services" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">02</span> Cloud Infrastructure</a>
+            <a href="#services" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">03</span> Web Design &amp; Development</a>
+            <a href="#services" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">04</span> Hardware &amp; Software Sales</a>
+            <a href="#services" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">05</span> Network Design</a>
+            <a href="#services" style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;border:1px solid rgba(185,203,226,.2);background:rgba(15,34,66,.6);color:#DCE7F5;font-size:14.5px;font-weight:600;transition:border-color .3s ease,background .3s ease,transform .3s ease,color .3s ease;" style-hover="border-color:#22B8DC;background:rgba(34,184,220,.16);transform:translateY(-3px);color:#fff;"><span aria-hidden="true" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#22B8DC;letter-spacing:.06em;">06</span> Technology Consulting</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding:24px 0 30px;">
+        <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#6C8AAC;font-size:12.5px;letter-spacing:.04em;">Copyright &copy; 2001-2026 Ideal Technology Solutions, LLC. All rights reserved</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;">
+          <img src="https://idealtechnologysolutions.us/wp-content/uploads/2025/08/Logo-IdealTS-NO-BG-1-e1756749623695-1024x286.png" alt="Ideal Technology Solutions" style="height:26px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.8;" />
+          <a href="#main" style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#8FA8C6;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;transition:color .3s ease;" style-hover="color:#22B8DC;">&#8593; top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const PARTNERS = [
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/12/sophos-Photoroom.png", alt: "Sophos" },
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/12/Veeam-Photoroom.png", alt: "Veeam" },
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/11/cisco.png", alt: "Cisco" },
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/12/Fortinet-Photoroom.png", alt: "Fortinet" },
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/12/ruckus-Photoroom.png", alt: "Ruckus Wireless" },
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/12/hpe-Photoroom.png", alt: "Hewlett Packard Enterprise" },
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/12/lenovo.png", alt: "Lenovo" },
+  { src: "https://idealtechnologysolutions.us/wp-content/uploads/2025/12/ViewSonic-Photoroom.png", alt: "ViewSonic" }
+];
+
+const TICKER = [
+  "IT Managed Services", "Cloud Infrastructure", "Network Design", "Cybersecurity oversight",
+  "Web Design & Development", "Hardware & Software Sales", "Technology Consulting", "Business Phone Systems"
+].map((t) => ({ text: t }));
+
+const BIG_WORDS = ["Secure", "Scalable", "Reliable", "Local"];
+
+const STATS = [
+  { value: 25, suffix: "+", display: "25+", label: "Years in business", note: "Michigan organizations since 2001." },
+  { value: 8, suffix: "", display: "8", label: "Certified partners", note: "The brands your systems already run on." },
+  { value: 6, suffix: "", display: "6", label: "Service practices", note: "Managed IT through to consulting." },
+  { value: 30, suffix: " min", display: "30 min", label: "First conversation", note: "With a client advisor, not a queue." }
+];
+
+const SVC_IMGS = ["c3-managed.webp","c3-cloud.webp","c3-web.webp","c3-hardware.webp","c3-network.webp","c3-consulting.webp"];
+const IND_IMGS = ["c3-healthcare.webp","c3-automotive.webp","c3-manufacturing.webp","c3-web.webp","c3-education.webp","c3-nonprofits.webp"];
+
+const SERVICES = [
+  { no: "01", title: "IT Managed Services", body: "Reliable IT management for small and mid-sized businesses to ensure smooth and secure daily operations, with proactive monitoring and a helpdesk your team can actually reach.", imgAlt: "Placeholder for a photograph of a helpdesk engineer at work", imgNote: "helpdesk engineer \u2014 1200\u00d7675", points: ["Proactive monitoring", "Patch management", "Helpdesk & escalation", "Backup oversight"] },
+  { no: "02", title: "Cloud Infrastructure", body: "Secure and scalable cloud infrastructure empowering businesses with flexibility, reliability and room to grow, sized to the workload rather than the sales target.", imgAlt: "Placeholder for a photograph representing cloud technology", imgNote: "cloud technology \u2014 1200\u00d7675", points: ["Migration planning", "Microsoft 365", "Backup & recovery", "Cost review"] },
+  { no: "03", title: "Web Design & Development", body: "Professional web design and development creating responsive, user-friendly and business-focused websites that load fast and read clearly on any device.", imgAlt: "Placeholder for a photograph of a website design in progress", imgNote: "web design work \u2014 1200\u00d7675", points: ["Responsive builds", "SEO structure", "Content updates", "Hosting & care"] },
+  { no: "04", title: "Hardware & Software Sales", body: "Authorized hardware and software sales offering trusted, scalable business technology, specified for how your people actually work.", imgAlt: "Placeholder for a photograph of business hardware being deployed", imgNote: "hardware deployment \u2014 1200\u00d7675", points: ["Licensing", "Workstations & laptops", "Servers & storage", "Displays"] },
+  { no: "05", title: "Network Design", body: "Custom network design for secure, scalable and high-speed business connectivity across every site, floor and shift.", imgAlt: "Placeholder for a photograph of network cabinet cabling", imgNote: "network infrastructure \u2014 1200\u00d7675", points: ["Wired & wireless", "Firewalls", "Site surveys", "Segmentation"] },
+  { no: "06", title: "Technology Consulting", body: "Expert IT guidance to strategically align your technology with your business goals and sustainable growth, with roadmaps you can budget against.", imgAlt: "Placeholder for a photograph of a consulting session with a client", imgNote: "consulting session \u2014 1200\u00d7675", points: ["IT roadmaps", "Budget planning", "Risk review", "Vendor strategy"] }
+];
+
+const REASONS = [
+  { iconRadius: "50%", title: "Fast Response Times", body: "Quick IT support to keep your business running smoothly, with clear escalation so nobody waits without an answer." },
+  { iconRadius: "4px", title: "Certified Experts", body: "Skilled professionals with top industry certifications across security, networking and cloud platforms." },
+  { iconRadius: "50% 4px 50% 4px", title: "Customized IT Solutions", body: "Tailored services designed around your unique business needs, not a package you have to grow into." },
+  { iconRadius: "4px 50% 4px 50%", title: "Trusted Technology Partners", body: "Working with leading brands to deliver dependable results across hardware, software and support." }
+];
+
+const INDUSTRIES = [
+  { no: "01 / HEALTHCARE", title: "Healthcare", body: "Secure IT systems designed for hospitals, clinics and medical practices to keep patient data safe and operations smooth.", imgAlt: "Placeholder for a photograph of a clinical workstation", imgNote: "clinic workstation" },
+  { no: "02 / AUTOMOTIVE", title: "Automotive", body: "IT solutions that enhance connectivity, streamline manufacturing and support dealerships with reliable infrastructure.", imgAlt: "Placeholder for a photograph of a dealership service bay", imgNote: "dealership service bay" },
+  { no: "03 / MANUFACTURING", title: "Manufacturing", body: "Robust networks and software solutions built to optimize production, supply chains and operational efficiency.", imgAlt: "Placeholder for a photograph of a plant floor", imgNote: "plant floor" },
+  { no: "04 / RETAIL", title: "Retail & Service", body: "POS systems, cloud services and IT support tailored for retail stores and service-based businesses.", imgAlt: "Placeholder for a photograph of a retail point of sale counter", imgNote: "retail POS counter" },
+  { no: "05 / EDUCATION", title: "Education", body: "Advanced IT solutions to empower schools, colleges and universities with secure and scalable technology systems.", imgAlt: "Placeholder for a photograph of a school computer lab", imgNote: "school computer lab" },
+  { no: "06 / NON-PROFITS", title: "Non-Profits", body: "Affordable and effective IT services designed to help mission-driven organizations achieve more with limited budgets.", imgAlt: "Placeholder for a photograph of a non-profit team meeting", imgNote: "non-profit team" }
+];
+
+class Component extends DCLogic {
+  state = { narrow: false, menuOpen: false, active: 0, marqueePaused: false };
+
+  componentDidMount() {
+    this.measure = () => {
+      const n = window.innerWidth < 1080;
+      if (n !== this.state.narrow) this.setState({ narrow: n, menuOpen: false });
+    };
+    this.measure();
+    window.addEventListener("resize", this.measure);
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    this.onMove = (e) => {
+      const glow = document.getElementById("its3-glow");
+      if (!glow) return;
+      const x = (e.clientX / window.innerWidth - 0.5) * 90;
+      const y = (e.clientY / window.innerHeight - 0.5) * 60;
+      glow.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+    };
+    if (!reduce) window.addEventListener("mousemove", this.onMove, { passive: true });
+
+    const nodes = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (!reduce) {
+      nodes.forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(26px)";
+        el.style.transition = "opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1)";
+      });
+    }
+    const runCount = (el) => {
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || "";
+      if (reduce) { el.textContent = target + suffix; return; }
+      const dur = 1500, t0 = Date.now();
+      const id = setInterval(() => {
+        const p = Math.min((Date.now() - t0) / dur, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p >= 1) clearInterval(id);
+      }, 40);
+    };
+    let pending = nodes.slice();
+    let counters = Array.from(document.querySelectorAll("[data-count]"));
+    const sweep = () => {
+      const vh = window.innerHeight || 800;
+      if (pending.length) {
+        const hit = [];
+        pending = pending.filter((el) => {
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.92 && r.bottom > -60) { hit.push(el); return false; }
+          return true;
+        });
+        hit.forEach((el, i) => {
+          el.style.transitionDelay = Math.min(i * 90, 270) + "ms";
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        });
+      }
+      if (counters.length) {
+        counters = counters.filter((el) => {
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.9 && r.bottom > 0) { runCount(el); return false; }
+          return true;
+        });
+      }
+      if (!pending.length && !counters.length) {
+        clearInterval(this.timer);
+        window.removeEventListener("scroll", sweep);
+      }
+    };
+    this.sweepFn = sweep;
+    window.addEventListener("scroll", sweep, { passive: true });
+    this.timer = setInterval(sweep, 140);
+    sweep();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.measure);
+    if (this.onMove) window.removeEventListener("mousemove", this.onMove);
+    if (this.sweepFn) window.removeEventListener("scroll", this.sweepFn);
+    if (this.timer) clearInterval(this.timer);
+  }
+
+  renderVals() {
+    const { narrow, menuOpen, active, marqueePaused } = this.state;
+    const marqueeBase = { display: "flex", width: "max-content", gap: "clamp(12px,1.4vw,18px)", animationPlayState: marqueePaused ? "paused" : "running" };
+    return {
+      tickerLoop: TICKER.concat(TICKER),
+      stats: STATS,
+      reasons: REASONS,
+      industries: INDUSTRIES.map((it, i) => Object.assign({}, it, { img: IND_IMGS[i % IND_IMGS.length] })),
+      partnersLoop: PARTNERS.concat(PARTNERS),
+      partnersLoopRev: PARTNERS.slice().reverse().concat(PARTNERS.slice().reverse()),
+      bigWordsLoop: BIG_WORDS.concat(BIG_WORDS).map((w, i) => ({
+        text: w + " \u00b7",
+        style: {
+          fontFamily: "Sora, sans-serif",
+          fontSize: "clamp(38px,7vw,104px)",
+          fontWeight: 700,
+          letterSpacing: "-.04em",
+          lineHeight: 1.05,
+          paddingRight: "clamp(20px,3vw,44px)",
+          whiteSpace: "nowrap",
+          color: i % 2 === 0 ? "#fff" : "transparent",
+          WebkitTextStroke: i % 2 === 0 ? "0" : "1px rgba(143,226,245,.6)"
+        }
+      })),
+      active: SERVICES[active] ? Object.assign({}, SERVICES[active], { img: SVC_IMGS[active % SVC_IMGS.length], points: SERVICES[active].points.map((t) => ({ text: t })) }) : SERVICES[0],
+      serviceTabs: SERVICES.map((s, i) => {
+        const on = i === active;
+        return {
+          no: s.no,
+          title: s.title,
+          active: on ? "true" : "false",
+          select: () => { if (this.state.active !== i) this.setState({ active: i }); },
+          btnStyle: {
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            gap: "16px",
+            textAlign: "left",
+            cursor: "pointer",
+            padding: "clamp(16px,1.8vw,22px) clamp(16px,1.8vw,24px)",
+            borderRadius: "16px",
+            border: on ? "1px solid rgba(34,184,220,.6)" : "1px solid rgba(185,203,226,.14)",
+            background: on ? "linear-gradient(120deg,rgba(34,184,220,.18),rgba(46,111,209,.1))" : "rgba(10,23,48,.5)",
+            color: on ? "#fff" : "#B9CBE2",
+            transition: "background .35s ease, border-color .35s ease, transform .35s ease, color .35s ease",
+            transform: on ? "translateX(6px)" : "none"
+          },
+          noStyle: { fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace", fontSize: "12px", letterSpacing: ".12em", color: on ? "#22B8DC" : "#6C8AAC", flex: "none" },
+          arrowStyle: { flex: "none", fontSize: "18px", color: on ? "#22B8DC" : "#6C8AAC", opacity: on ? 1 : 0.35, transition: "opacity .35s ease" }
+        };
+      }),
+      marqueeA: Object.assign({}, marqueeBase, { animation: "its3-marq 40s linear infinite" }),
+      marqueeB: Object.assign({}, marqueeBase, { animation: "its3-marq-rev 46s linear infinite" }),
+      deskNav: { listStyle: "none", margin: 0, padding: 0, display: narrow ? "none" : "flex", alignItems: "center", gap: "2px", flexWrap: "wrap" },
+      deskCta: { display: narrow ? "none" : "inline-flex", alignItems: "center", flex: "none", padding: "13px 24px", borderRadius: "999px", background: "linear-gradient(120deg,#22B8DC,#2E6FD1)", color: "#03101F", fontWeight: 700, fontSize: "14.5px", transition: "transform .3s ease", boxShadow: "0 14px 30px -14px rgba(34,184,220,.9)" },
+      burger: { display: narrow ? "flex" : "none", flex: "none", width: "44px", height: "44px", borderRadius: "999px", border: "1px solid rgba(185,203,226,.28)", background: "rgba(34,184,220,.12)", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "5px", cursor: "pointer" },
+      mobileMenu: { display: narrow && menuOpen ? "block" : "none", margin: "12px auto 0", maxWidth: "1320px", padding: "18px", borderRadius: "24px", background: "rgba(10,23,48,.96)", border: "1px solid rgba(143,226,245,.18)" },
+      toggleMenu: () => this.setState({ menuOpen: !menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      pauseMarquee: () => this.setState({ marqueePaused: true }),
+      playMarquee: () => this.setState({ marqueePaused: false })
+    };
+  }
+}
+
+</script>
+</body>
+</html>
