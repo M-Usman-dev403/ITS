@@ -1,15 +1,10 @@
-# Ideal Technology Solutions — Concept 1 (Modern Technology)
+# Concept 2 — Premium Corporate
 
-Static single-page site. Upload **all** of these to the repository, keeping the structure:
+Upload every file in this zip to the ROOT of the ITS repo, alongside the existing index.html and support.js.
+Do not place them in a folder — GitHub's drag-and-drop flattens folders.
 
-```
-index.html
-support.js
-.nojekyll
-images/            <- all 8 .webp files must be inside this folder
-```
+- Concept 1: https://m-usman-dev403.github.io/ITS/
+- Concept 2: https://m-usman-dev403.github.io/ITS/concept-2.html
 
-If images do not appear, open `<your-pages-url>/images/hero-network-operations.webp` directly.
-A 404 there means the `images` folder was not pushed.
-
-Fonts, the logo, partner logos and the page runtime load from external CDNs, so the page needs internet access.
+support.js is already in the repo and is shared by both pages.
+Image files are prefixed c2- so they never clash with Concept 1's.
